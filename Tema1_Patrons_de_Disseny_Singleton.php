@@ -5,8 +5,12 @@ class Tigger {
     private static $instance;
     private $count = 0;
 
-    public static function getInstance(): Tigger{
+    private function __construct(){
         echo "Building character..." . PHP_EOL;
+    }
+
+    public static function getInstance(): Tigger{
+        
         if(self::$instance == null){
             self::$instance = new self();
         }
